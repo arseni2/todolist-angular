@@ -1,0 +1,15 @@
+<form class="p-6 flex" [formGroup]="form" (ngSubmit)="submit()">
+  <input
+    type="text"
+    class="bg-[#21212B] border-none outline-none caret-white p-3 rounded-md w-full text-white mr-3"
+    placeholder="Nome da tarefa"
+    formControlName="title"
+  >
+  <button
+    type="submit"
+    class="bg-[#F95738] disabled:opacity-60 disabled:cursor-not-allowed rounded-md h-12 pl-3 pr-3 text-white cursor-pointer"
+    [disabled]="!title.valid"
+  >
+    Adicionar
+  </button>
+</form>

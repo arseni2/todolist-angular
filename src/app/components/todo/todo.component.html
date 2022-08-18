@@ -1,0 +1,17 @@
+<div class="mx-6 my-2 text-white bg-[#21212B] h-[54px] flex items-center" [class]="todo.isComplete ? 'bg-[#1a1a20]' : 'bg-[#21212B]'">
+  <div class="flex p-[16px] justify-between w-full">
+    <div class="flex items-center">
+      <input
+        type="checkbox"
+        [checked]="todo.isComplete"
+        (change)="changeCompleteHandler($event)"
+      >
+      <p class="ml-2" [ngClass]="{
+        'line-through': todo.isComplete
+      }">{{todo.title}}</p>
+    </div>
+    <div class="cursor-pointer">
+      <p (click)="deleteTask($event, todo.id)">delete</p>
+    </div>
+  </div>
+</div>
